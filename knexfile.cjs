@@ -10,10 +10,10 @@ module.exports = {
       database: process.env.DB_DATABASE || "waresync_backend_db",
     },
     migrations: {
-      directory: "./src/migrations",
+      directory: "./migrations",
     },
     seeds: {
-      directory: "./src/seeds",
+      directory: "./seeds",
     },
   },
 };
