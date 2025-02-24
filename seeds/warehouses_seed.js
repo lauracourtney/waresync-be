@@ -2,7 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-module.exports.seed = async function (knex) {
+export async function seed(knex) {
   await knex("warehouses").del();
   await knex("warehouses").insert([
     {
@@ -94,4 +94,4 @@ module.exports.seed = async function (knex) {
       contact_email: "igagnon@waresync.ca",
     },
   ]);
-};
+}

@@ -2,7 +2,7 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-module.exports.seed = async function (knex) {
+export async function seed(knex) {
   await knex("inventories").del();
   await knex("inventories").insert([
     {
@@ -222,4 +222,4 @@ module.exports.seed = async function (knex) {
       quantity: 5,
     },
   ]);
-};
+}

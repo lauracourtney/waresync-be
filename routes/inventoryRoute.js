@@ -1,11 +1,17 @@
 import initKnex from "knex";
 import configuration from "../knexfile.js";
-const knex = initKnex(configuration);
+
+const environment = process.env.NODE_ENV || "development";
+const knexConfig = configuration[environment];
+const knex = initKnex(knexConfig);
+
 import express from "express";
 const router = express.Router();
 import { validateInventoryData } from "../utils/utils.js";
 
-router.get("/inventories", async (req, res) => {
+router.get("/", async (req, res) => {
+  console.log("Get inventories reffed properly");
+
   const { sort_by, order_by } = req.query;
 
   try {

@@ -1,6 +1,4 @@
-require("dotenv").config();
-
-module.exports = {
+const config = {
   development: {
     client: "mysql2",
     connection: {
@@ -11,9 +9,12 @@ module.exports = {
     },
     migrations: {
       directory: "./migrations",
+      extension: "mjs",
     },
     seeds: {
       directory: "./seeds",
+      extension: "mjs",
     },
   },
 };
+export default config;
